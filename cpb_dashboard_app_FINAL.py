@@ -8,7 +8,7 @@ CSV_FILE = "cpb_cases.csv"
 
 COLUMNS = [
     "date",              # YYYY-MM-DD
-    "case_id",           # pseudonym, no identifiers
+    "case_id",           
     "age_years",
     "weight_kg",
     "procedure_type",
@@ -252,3 +252,4 @@ elif page == "Trends":
                 st.line_chart(df_plot.set_index("date")["highest_lactate_mmolL"])
             else:
                 st.write("No lactate data to plot.")
+
