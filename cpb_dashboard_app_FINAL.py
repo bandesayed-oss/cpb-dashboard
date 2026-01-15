@@ -63,7 +63,7 @@ st.set_page_config(
 st.title("CPB Case Tracker & QA Dashboard")
 st.caption(
     "Personal educational tool for tracking cardiopulmonary bypass (CPB) cases. "
-    "Created by Bande Hasan Sayed."
+    "Created by *Bande Hasan Sayed*."
 )
 
 # Load data once at start of app run
@@ -87,7 +87,7 @@ if page == "Add new case":
 
         with col1:
             date_input = st.date_input("Date of case", value=date.today())
-            case_id = st.text_input("Case ID (pseudonym)", value="Case_01")
+            case_id = st.text_input("Case ID", value="Case_01")
             age_years = st.number_input("Patient age (years)", min_value=0, max_value=120, value=60, step=1)
             weight_kg = st.number_input("Weight (kg)", min_value=0.0, max_value=300.0, value=70.0, step=0.1)
             procedure_type = st.text_input("Procedure type", value="CABG")
@@ -252,4 +252,5 @@ elif page == "Trends":
                 st.line_chart(df_plot.set_index("date")["highest_lactate_mmolL"])
             else:
                 st.write("No lactate data to plot.")
+
 
